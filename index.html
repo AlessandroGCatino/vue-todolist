@@ -15,25 +15,24 @@
             <div class="text-center">
                     <h1>MY TO-DO LIST</h1>
                     <!-- MILESTONE 1
-                    Stampare all'interno di una lista HTML un item per ogni todo.
-                    Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato. -->
+                    Stampare lista items. Se done è true, testo del todo sbarrato. -->
                     <h3 v-if="tasks.length == 0"> Nessuna Task presente </h3>
                     <ol v-else class="border">
+
+                        <!-- BONUS 2 : cliccare sul testo inverte il valore di done -->
                         <li v-for="(task, index) in tasks" @click="changeStatus(index)">
                                 <span :class="task.done === true? `completed` : `` ">
                                     {{task.text}}
                                 </span>
                     <!-- MILESTONE 2
-                    Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista. -->
+                    Visualizzare una "x": al click todo viene rimosso dalla lista. -->
                                 <small @click="deleteTask(index)"> &cross; </small>
                         </li>
                     </ol>
 
                     <!-- MILESTONE 3
-                    Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti. -->
-                    
-                    <!-- Bonus:
-                    1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista -->
+                    Input testuale e un pulsante: cliccando sul pulsante, crea nuovo todo, che viene aggiunto alla lista -->
+                    <!-- BONUS 1 : "ENTER" per aggiungere il todo alla lista -->
                     <input type="text" name="" id="" placeholder="Aggiungi una task..."
                             class=""
                             v-model="newTask.text"

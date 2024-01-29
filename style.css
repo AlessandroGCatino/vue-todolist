@@ -22,6 +22,7 @@ ol{
 
 small{
     color: red;
+    cursor: pointer;
 }
 
 .completed{

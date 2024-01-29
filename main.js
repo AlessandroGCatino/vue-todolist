@@ -32,6 +32,8 @@ createApp({
 
     },
     methods: {
+        /*MILESTONE 2
+            Visualizzare una "x": al click todo viene rimosso dalla lista. */
         deleteTask(index) {
             this.tasks.splice(index, 1)
         },
@@ -45,8 +47,15 @@ createApp({
                 this.tasks.push(addNewTask)
                 this.newTask.text = ""
             }
+        },
+        /* BONUS 2 : cliccare sul testo inverte il valore di done */
+        changeStatus(index){
+            if(this.tasks[index].done == true){
+                this.tasks[index].done = false
+            } else {
+                this.tasks[index].done = true
+            }
         }
-
     }
 
 }).mount('#app')

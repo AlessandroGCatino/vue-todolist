@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue To-Do List</title>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
+    <body>
+        <div id="app">
+            <div class="text-center">
+                    <h1>MY TO-DO LIST</h1>
+                    <!-- MILESTONE 1
+                    Stampare all'interno di una lista HTML un item per ogni todo.
+                    Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato. -->
+                    <ol class="border">
+                        <li v-for="(task, index) in tasks"
+                                :class="task.done === true? `completed` : `` ">
+                                {{task.text}}
+                        </li>
+                    </ol>
+                    <input type="text" placeholder="Aggiungi una task..."
+                            class=""
+                            v-model="newTask.text">
+                    <button class="btn btn-primary ms-5">Aggiungi Task</button>
+            </div>
+    
+        </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./main.js"></script>

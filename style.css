@@ -3,3 +3,27 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+
+li{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+ol{
+    line-height: 30px;
+    margin: 10px auto;
+    width: 30%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+small{
+    color: red;
+}
+
+.completed{
+    text-decoration: line-through;
+}
